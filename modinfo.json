@@ -1,0 +1,9 @@
+{
+  "type": "code",
+  "modid": "smolfurniture",
+  "name": "Smol Furniture",
+  "side": "universal",
+  "authors": ["unHallowed", "Pax", "valthiris", "Notos_"],
+  "description": "For the SMOL",
+  "version": "0.1.1"
+}

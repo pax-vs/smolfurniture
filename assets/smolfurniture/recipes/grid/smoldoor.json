@@ -1,0 +1,25 @@
+[
+
+	{
+		"name": "Small sleek windowed door",
+		"ingredientPattern": "WG,WW",
+		"ingredients": {
+			"W": { "type": "item", "code": "game:plank-*", "name": "wood" },
+			"G": { "type": "block", "code": "game:glass-plain"}
+		},
+		"width": 2,
+		"height": 2,
+		"output": { "type": "block", "code": "smolfurniture:smoldoorsleekwindowed-{wood}"  }
+	},
+	{
+		"name": "Small sleek door",
+		"ingredientPattern": "W_W,W_W",
+		"ingredients": {
+			"W": { "type": "item", "code": "game:plank-*", "name": "wood" }
+		},
+		"width": 3,
+		"height": 2,
+		"output": { "type": "block", "code": "smolfurniture:smoldoorsleekpanel-{wood}"  }
+	}
+
+]

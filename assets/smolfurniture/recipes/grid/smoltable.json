@@ -1,0 +1,12 @@
+[
+	{
+		"ingredientPattern": "WWW,WSW",
+		"ingredients": {
+			"W": { "type": "item", "code": "game:plank-*", "name": "wood" },
+			"S": { "type": "item", "tags": ["tool-saw"], "isTool": true, "toolDurabilityCost": 1 }
+		},
+		"width": 3,
+		"height": 2,
+		"output": { "type": "block", "code": "smolfurniture:smoltable-{wood}" }
+	}
+]

@@ -1,0 +1,13 @@
+[
+	{
+		"ingredientPattern": "WCW,___,WSW",
+		"ingredients": {
+			"W": { "type": "item", "code": "game:plank-*", "quantity": 2, "name": "wood" },
+			"C": { "type": "item", "code": "game:cloth-*", "quantity": 1, "name": "color", "allowedVariants": ["plain", "blue", "brown", "gray", "black", "green", "orange", "pink", "purple", "red", "white", "yellow"] },
+			"S": { "type": "item", "tags": ["tool-saw"], "isTool": true, "toolDurabilityCost": 1 }
+		},
+		"width": 3,
+		"height": 3,
+		"output": { "type": "block", "code": "smolfurniture:tallsmolchair-{color}-{wood}-north" }
+	}
+]

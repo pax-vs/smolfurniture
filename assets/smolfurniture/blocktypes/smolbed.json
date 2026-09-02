@@ -1,0 +1,67 @@
+{
+	"code": "smolbed",
+	"class": "BlockSmolBed",
+	"entityClass": "BlockEntitySmolBed",
+	"attributes": {
+		"sleepEfficiency": 0.70833333
+	},
+	"variantgroups": [
+		{ "code": "type", "states": ["plain", "blue", "red", "yellow", "purple", "brown", "green", "orange", "black", "gray", "pink", "white"] },
+		{ "code": "side", "loadFromProperties": "abstract/horizontalorientation" }
+	],
+	"shapeByType": {
+		"*-north": { "base": "smolfurniture:smolbed", "rotateY": 0 },
+		"*-east": { "base": "smolfurniture:smolbed", "rotateY": 270 },
+		"*-south": { "base": "smolfurniture:smolbed", "rotateY": 180 },
+		"*-west": { "base": "smolfurniture:smolbed", "rotateY": 90 }
+	},
+	"texturesByType": {
+		"*": {
+			"mattress-normal.png": { "base": "game:block/cloth/linen/{type}*" },
+			"normal.png": { "base": "game:block/cloth/bed/pillow-normal" },
+			"sides-aged.png": { "base": "game:block/wood/debarked/oak" }
+		}
+	},
+	"creativeinventoryByType": {
+		"*-north": { "general": ["*"], "decorative": ["*"], "smolfurniture": ["*"] },
+		"*": { }
+	},
+	"heldTpIdleAnimation": "holdunderarm",
+	"blockmaterial": "Wood",
+	"replaceable": 550,
+	"resistance": 2,
+	"lightAbsorption": 0,
+	"maxStackSize": 2,
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"selectionbox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.3125, "z2": 1 },
+	"collisionbox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.3125, "z2": 1 },
+	"sounds": {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	},
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 40
+	},
+	"materialDensity": 600,
+	"groundTransform": {
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 2
+	},
+	"guiTransform": {
+		"origin": { "x": 0.5, "y": 0.25, "z": 0.5 },
+		"scale": 1.2
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.9, "y": -0.3, "z": -0.9 },
+		"rotation": { "x": -80, "y": -37, "z": 17 },
+		"scale": 0.6
+	}
+}
