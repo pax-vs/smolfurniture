@@ -7,6 +7,10 @@
 		},
 		"width": 3,
 		"height": 2,
-		"output": { "type": "block", "code": "smolfurniture:smoltable-{wood}" }
+		"output": {
+			"type": "block",
+			"code": "smolfurniture:smoltable",
+			"attributes": { "types": { "wood": "{wood}" } }
+		}
 	}
 ]

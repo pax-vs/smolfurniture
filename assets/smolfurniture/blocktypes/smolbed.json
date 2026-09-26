@@ -2,29 +2,67 @@
 	"code": "smolbed",
 	"class": "BlockSmolBed",
 	"entityClass": "BlockEntitySmolBed",
-	"attributes": {
-		"sleepEfficiency": 0.70833333
-	},
+	"behaviors": [
+		{
+			"name": "AttributeRenderingLibrary.BlockShapeTexturesFromAttributes",
+			"properties": {
+				"textures": {
+					"*": {
+						"mattress-normal.png": { "base": "game:block/cloth/linen/{cloth}" },
+						"normal.png": { "base": "game:block/cloth/bed/pillow-normal" },
+						"sides-aged.png": { "base": "game:block/wood/debarked/oak" }
+					}
+				},
+				"name": {
+					"*": ["smolfurniture:block-smolbed-{cloth}-*"]
+				}
+			}
+		},
+		{
+			"name": "AttributeRenderingLibrary.GenerateCreativeStacks",
+			"propertiesByType": {
+				"*-north": {
+					"variantgroups": [
+						{ "code": "cloth", "states": ["plain", "blue", "red", "yellow", "purple", "brown", "green", "orange", "black", "gray", "pink", "white"] }
+					],
+					"creativeinventory": {
+						"smolfurniture": ["*"]
+					}
+				},
+				"*": {
+					"variantgroups": [],
+					"creativeinventory": {}
+				}
+			}
+		},
+		{
+			"name": "AttributeRenderingLibrary.Handbook",
+			"properties": {
+				"excludeFromHandbookSearch": { "*": true },
+				"pageCode": { "*": "block-smolfurniture:smolbed" },
+				"codeForGrouping": { "*": "smolfurniture:smolbed" },
+				"wildcardForGrouping": { "*": "smolfurniture:smolbed" }
+			}
+		},
+		{ "name": "HorizontalOrientable" }
+	],
 	"variantgroups": [
-		{ "code": "type", "states": ["plain", "blue", "red", "yellow", "purple", "brown", "green", "orange", "black", "gray", "pink", "white"] },
 		{ "code": "side", "loadFromProperties": "abstract/horizontalorientation" }
 	],
+	"attributes": {
+		"sleepEfficiency": 0.70833333,
+		"handbook": { "groupBy": ["smolbed-*"] }
+	},
 	"shapeByType": {
 		"*-north": { "base": "smolfurniture:smolbed", "rotateY": 0 },
 		"*-east": { "base": "smolfurniture:smolbed", "rotateY": 270 },
 		"*-south": { "base": "smolfurniture:smolbed", "rotateY": 180 },
 		"*-west": { "base": "smolfurniture:smolbed", "rotateY": 90 }
 	},
-	"texturesByType": {
-		"*": {
-			"mattress-normal.png": { "base": "game:block/cloth/linen/{type}*" },
-			"normal.png": { "base": "game:block/cloth/bed/pillow-normal" },
-			"sides-aged.png": { "base": "game:block/wood/debarked/oak" }
-		}
-	},
-	"creativeinventoryByType": {
-		"*-north": { "general": ["*"], "decorative": ["*"], "smolfurniture": ["*"] },
-		"*": { }
+	"textures": {
+		"mattress-normal.png": { "base": "game:block/cloth/linen/plain" },
+		"normal.png": { "base": "game:block/cloth/bed/pillow-normal" },
+		"sides-aged.png": { "base": "game:block/wood/debarked/oak" }
 	},
 	"heldTpIdleAnimation": "holdunderarm",
 	"blockmaterial": "Wood",

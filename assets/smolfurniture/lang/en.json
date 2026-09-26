@@ -1,6 +1,12 @@
 {
 
 	"game:tabname-smolfurniture": "Smol Furniture",
+	"handbook-smolchair": "Smol Chair",
+	"handbook-tallsmolchair": "Big Stool",
+	"handbook-smoltable": "Smol Table",
+	"handbook-smolbed": "Smol Bed",
+	"handbook-smoldoorsleekpanel": "Smol Sleek Panel Door",
+	"handbook-smoldoorsleekwindowed": "Smol Sleek Windowed Door",
 	"block-smolchair-plain-*": "Smol chair (Plain)",
 	"block-smolchair-blue-*": "Smol chair (Blue)",
 	"block-smolchair-red-*": "Smol chair (Red)",

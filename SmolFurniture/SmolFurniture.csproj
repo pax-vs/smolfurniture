@@ -9,6 +9,8 @@
     <Platforms>AnyCPU</Platforms>
     <VintageStoryPath Condition="'$(VINTAGE_STORY)' != ''">$(VINTAGE_STORY)</VintageStoryPath>
     <VintageStoryPath Condition="'$(VintageStoryPath)' == '' and '$(OS)' == 'Windows_NT'">$(AppData)\Vintagestory</VintageStoryPath>
+    <AttributeRenderingLibraryPath Condition="'$(ATTRIBUTE_RENDERING_LIBRARY)' != ''">$(ATTRIBUTE_RENDERING_LIBRARY)</AttributeRenderingLibraryPath>
+    <AttributeRenderingLibraryPath Condition="'$(AttributeRenderingLibraryPath)' == '' and Exists('$(VintageStoryPath)\Mods\AttributeRenderingLibrary.dll')">$(VintageStoryPath)\Mods\AttributeRenderingLibrary.dll</AttributeRenderingLibraryPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
@@ -51,11 +53,21 @@
       <HintPath>$(VintageStoryPath)\Lib\SkiaSharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
+
+    <Reference Include="AttributeRenderingLibrary">
+      <HintPath>$(AttributeRenderingLibraryPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
   <Target Name="ValidateVintageStoryPath" BeforeTargets="ResolveAssemblyReferences"
           Condition="!Exists('$(VintageStoryPath)\VintagestoryAPI.dll')">
     <Error Text="Set VINTAGE_STORY to the Vintage Story installation directory." />
+  </Target>
+
+  <Target Name="ValidateAttributeRenderingLibraryPath" BeforeTargets="ResolveAssemblyReferences"
+          Condition="!Exists('$(AttributeRenderingLibraryPath)')">
+    <Error Text="Set ATTRIBUTE_RENDERING_LIBRARY to the path of AttributeRenderingLibrary.dll." />
   </Target>
 
 </Project>

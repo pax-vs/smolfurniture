@@ -4,20 +4,66 @@
   "entityClass": "Generic",
 
   "behaviors": [
+    {
+      "name": "SmolFurniture.DoorAttributeRendering",
+      "properties": {
+        "shape": { "*": { "base": "smolfurniture:smoldoorsleekwindowed" } },
+        "textures": {
+          "*": {
+            "wood": {
+              "base": "game:block/wood/debarked/{wood}",
+              "rotation": 90,
+              "blendedOverlays": [
+                {
+                  "base": "game:block/wood/door/overlay-solid",
+                  "blendMode": "Overlay"
+                }
+              ]
+            },
+            "iron": {
+              "base": "game:block/metal/ingot/iron",
+              "rotation": 90
+            },
+            "plain": {
+              "base": "game:block/glass/vintage",
+              "rotation": 90
+            }
+          }
+        },
+        "name": { "*": ["smolfurniture:block-smoldoorsleekwindowed-*"] }
+      }
+    },
+    {
+      "name": "AttributeRenderingLibrary.GenerateCreativeStacks",
+      "properties": {
+        "variantgroups": [
+          { "code": "wood", "states": ["aged", "veryaged"], "loadFromProperties": "game:block/wood" }
+        ],
+        "creativeinventory": {
+          "smolfurniture": ["*"]
+        }
+      }
+    },
+    {
+      "name": "AttributeRenderingLibrary.Handbook",
+      "properties": {
+        "excludeFromHandbookSearch": { "*": true },
+        "pageCode": { "*": "block-smolfurniture:smoldoorsleekwindowed" },
+        "codeForGrouping": { "*": "smolfurniture:smoldoorsleekwindowed" },
+        "wildcardForGrouping": { "*": "smolfurniture:smoldoorsleekwindowed" }
+      }
+    },
     { "name": "Lockable" },
     { "name": "Door" },
     { "name": "BlockEntityInteract" }
   ],
-  "entityBehaviors": [{ "name": "Door" }],
-
-  "variantgroups": [
-    { "code": "wood", "states": ["aged", "veryaged"], "loadFromProperties": "block/wood" }
-  ],
+  "entityBehaviors": [{ "name": "SmolFurniture.Door" }],
 
   "attributes": {
     "airtightByType": {
 			"*": true
-		}
+		},
+		"handbook": { "groupBy": ["smoldoorsleekwindowed"] }
 
     },
     "reinforcable": true,
@@ -28,32 +74,26 @@
     "closeSoundByType": { "*": "game:sounds/block/door" },
     "easingSpeedByType": { "*": 10 },
 
-  "creativeinventoryByType": {
-    "*": { "general": ["*"], "decorative": ["*"], "smolfurniture": ["*"] }
-  },
-
   "shape": { "base": "smolfurniture:smoldoorsleekwindowed" },
 
-  "texturesByType": {
-    "smoldoorsleekwindowed-*": {
-      "wood": {
-        "base": "game:block/wood/debarked/{wood}",
-        "rotation": 90,
-        "blendedOverlays": [
-          {
-            "base": "game:block/wood/door/overlay-solid",
-            "blendMode": "Overlay"
-          }
-        ]
-      },
-      "iron": {
-        "base": "game:block/metal/ingot/iron",
-        "rotation": 90
-      },
-      "plain": {
-        "base": "game:block/glass/vintage",
-        "rotation": 90
-      }
+  "textures": {
+    "wood": {
+      "base": "game:block/wood/debarked/aged",
+      "rotation": 90,
+      "blendedOverlays": [
+        {
+          "base": "game:block/wood/door/overlay-solid",
+          "blendMode": "Overlay"
+        }
+      ]
+    },
+    "iron": {
+      "base": "game:block/metal/ingot/iron",
+      "rotation": 90
+    },
+    "plain": {
+      "base": "game:block/glass/vintage",
+      "rotation": 90
     }
   },
 

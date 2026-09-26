@@ -10,26 +10,14 @@
 	"textureWidth": 32,
 	"textureHeight": 32,
 	"textureSizes": {
-		"Material": [32, 32],
-		"Material.001": [32, 32],
-		"Material.002": [32, 32],
 		"sides-aged.png": [32, 32],
-		"blue.png": [32, 32],
-		"pillow-normal.png": [32, 32],
 		"normal.png": [32, 32],
-		"mattress-normal.png": [32, 32],
-		"diamond-feet.png": [32, 32]
+		"mattress-normal.png": [32, 32]
 	},
 	"textures": {
-		"Material": "diamond-center",
-		"Material.001": "mattress-normal",
-		"Material.002": "oak1",
 		"sides-aged.png": "block/wood/bed/fancy/sides-aged",
-		"blue.png": "block/clay/brickstairs/blue",
-		"pillow-normal.png": "block/cloth/bed/pillow-normal",
 		"normal.png": "block/cloth/banner/aged/normal",
-		"mattress-normal.png": "block/cloth/bed/mattress-normal",
-		"diamond-feet.png": "block/cloth/bed/village/diamond-feet"
+		"mattress-normal.png": "block/cloth/bed/mattress-normal"
 	},
 	"elements": [
 		{

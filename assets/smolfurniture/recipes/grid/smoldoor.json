@@ -9,7 +9,11 @@
 		},
 		"width": 2,
 		"height": 2,
-		"output": { "type": "block", "code": "smolfurniture:smoldoorsleekwindowed-{wood}"  }
+		"output": {
+			"type": "block",
+			"code": "smolfurniture:smoldoorsleekwindowed",
+			"attributes": { "types": { "wood": "{wood}" } }
+		}
 	},
 	{
 		"name": "Small sleek door",
@@ -19,7 +23,11 @@
 		},
 		"width": 3,
 		"height": 2,
-		"output": { "type": "block", "code": "smolfurniture:smoldoorsleekpanel-{wood}"  }
+		"output": {
+			"type": "block",
+			"code": "smolfurniture:smoldoorsleekpanel",
+			"attributes": { "types": { "wood": "{wood}" } }
+		}
 	}
 
 ]

@@ -12,31 +12,6 @@ namespace SmolFurniture
 {
     public class BlockSmolBed : Block, IClaimTraverseable
     {
-        public override bool TryPlaceBlock(
-            IWorldAccessor world,
-            IPlayer byPlayer,
-            ItemStack itemstack,
-            BlockSelection blockSel,
-            ref string failureCode)
-        {
-            if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
-            {
-                byPlayer.InventoryManager.ActiveHotbarSlot.MarkDirty();
-                return false;
-            }
-
-            if (!CanPlaceBlock(world, byPlayer, blockSel, ref failureCode))
-            {
-                return false;
-            }
-
-            BlockFacing[] orientation = SuggestedHVOrientation(byPlayer, blockSel);
-            AssetLocation orientedCode = CodeWithVariant("side", orientation[0].Code);
-            Block orientedBlock = world.BlockAccessor.GetBlock(orientedCode);
-            orientedBlock.DoPlaceBlock(world, byPlayer, blockSel, itemstack);
-            return true;
-        }
-
         public override bool OnBlockInteractStart(
             IWorldAccessor world,
             IPlayer byPlayer,
@@ -97,34 +72,6 @@ namespace SmolFurniture
         public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
         {
             return GetHandbookDropsFromBreakDrops(handbookStack, forPlayer);
-        }
-
-        public override ItemStack[] GetDrops(
-            IWorldAccessor world,
-            BlockPos pos,
-            IPlayer byPlayer,
-            float dropQuantityMultiplier = 1f)
-        {
-            return new[] { new ItemStack(world.BlockAccessor.GetBlock(CodeWithVariant("side", "north"))) };
-        }
-
-        public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
-        {
-            return new ItemStack(world.BlockAccessor.GetBlock(CodeWithVariant("side", "north")));
-        }
-
-        public override AssetLocation GetRotatedBlockCode(int angle)
-        {
-            BlockFacing beforeFacing = BlockFacing.FromCode(Variant["side"]);
-            int rotatedIndex = GameMath.Mod(beforeFacing.HorizontalAngleIndex - angle / 90, 4);
-            BlockFacing nowFacing = BlockFacing.HORIZONTALS_ANGLEORDER[rotatedIndex];
-            return CodeWithVariant("side", nowFacing.Code);
-        }
-
-        public override AssetLocation GetHorizontallyFlippedBlockCode(EnumAxis axis)
-        {
-            BlockFacing facing = BlockFacing.FromCode(Variant["side"]);
-            return facing.Axis == axis ? CodeWithVariant("side", facing.Opposite.Code) : Code;
         }
 
         public override void GetHeldItemInfo(

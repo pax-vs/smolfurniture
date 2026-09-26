@@ -1,30 +1,56 @@
 {
 	"code": "smolchair",
-	"behaviors": [{"name": "UnstableFalling"} ],
+	"behaviors": [
+		{
+			"name": "AttributeRenderingLibrary.BlockShapeTexturesFromAttributes",
+			"properties": {
+				"shape": {
+					"*": { "base": "smolfurniture:smolchair" }
+				},
+				"textures": {
+					"*": {
+						"cover": { "base": "game:block/cloth/linen/{cloth}" },
+						"ebony": { "base": "game:block/wood/debarked/{wood}" }
+					}
+				},
+				"name": {
+					"*": ["smolfurniture:block-smolchair-{cloth}-*"]
+				}
+			}
+		},
+		{
+			"name": "AttributeRenderingLibrary.GenerateCreativeStacks",
+			"properties": {
+				"variantgroups": [
+					{ "code": "cloth", "states": ["plain", "blue", "red", "yellow", "purple", "brown", "green", "orange", "black", "gray", "pink", "white"] },
+					{ "code": "wood", "states": ["aged", "veryaged"], "loadFromProperties": "game:block/wood" }
+				],
+				"creativeinventory": {
+					"smolfurniture": ["*"]
+				}
+			}
+		},
+		{
+			"name": "AttributeRenderingLibrary.Handbook",
+			"properties": {
+				"excludeFromHandbookSearch": { "*": true },
+				"pageCode": { "*": "block-smolfurniture:smolchair" },
+				"codeForGrouping": { "*": "smolfurniture:smolchair" },
+				"wildcardForGrouping": { "*": "smolfurniture:smolchair" }
+			}
+		},
+		{ "name": "UnstableFalling" }
+	],
 	"attributes": {
 		"humanoidTraversalCost": 100,
-		"handbook": {
-			"groupBy": ["chair-*"]
-		}
+		"handbook": { "groupBy": ["smolchair"] }
 	},
-	"variantgroups": [
-		{ "code": "type", "states": ["plain", "blue", "red", "yellow", "purple", "brown", "green", "orange", "black", "gray", "pink", "white"] },
-		{ "code": "wood", "states": ["aged", "veryaged"], "loadFromProperties": "block/wood" }
-	],
-	"shapeByType": {
-		"smolchair-*": { "base": "smolfurniture:smolchair" }
-
-	},
-	"texturesByType": {
-		"*": {
-			"cover": { "base": "game:block/cloth/linen/{type}*" },
-			"ebony": { "base": "game:block/wood/debarked/{wood}" }
-		}
+	"shape": { "base": "smolfurniture:smolchair" },
+	"textures": {
+		"cover": { "base": "game:block/cloth/linen/plain" },
+		"ebony": { "base": "game:block/wood/debarked/aged" }
 	},
 	"heldTpIdleAnimation": "holdunderarm",
-	"creativeinventoryByType": {
-		"*": { "general": ["*"], "decorative": ["*"], "smolfurniture": ["*"] }
-	},
 	"blockmaterial": "Wood",
 	"replaceable": 900,
 	"resistance": 1.5,

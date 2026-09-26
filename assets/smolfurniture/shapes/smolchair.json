@@ -10,12 +10,10 @@
 	"textureWidth": 32,
 	"textureHeight": 32,
 	"textureSizes": {
-		"ebony": [32, 32],
-		"grey": [32, 32]
+		"ebony": [32, 32]
 	},
 	"textures": {
-		"ebony": "mahogany",
-		"grey": "grey"
+		"ebony": "mahogany"
 	},
 	"elements": [
 		{

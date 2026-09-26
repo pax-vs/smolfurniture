@@ -10,11 +10,9 @@
 	"textureWidth": 32,
 	"textureHeight": 32,
 	"textureSizes": {
-		"legs": [32, 32],
 		"top": [32, 32]
 	},
 	"textures": {
-		"legs": "legs",
 		"top": "top"
 	},
 	"elements": [

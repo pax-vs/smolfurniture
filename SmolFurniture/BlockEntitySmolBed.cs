@@ -25,7 +25,7 @@ namespace SmolFurniture
         {
             get
             {
-                BlockFacing facing = BlockFacing.FromCode(Block.LastCodePart());
+                BlockFacing facing = BlockFacing.FromCode(Block.LastCodePart()) ?? BlockFacing.NORTH;
                 centeredMountPosition.SetPos(Pos);
                 centeredMountPosition.Yaw = facing.HorizontalAngleIndex * GameMath.PIHALF + GameMath.PIHALF;
                 return centeredMountPosition.Add(0.5, mountHeight, 0.5);

@@ -2,20 +2,50 @@
 	"code": "smoltable",
 	"class": "BlockSmolTable",
 	"entityClass": "BlockEntitySmolTable",
-	"behaviors": [{"name": "UnstableFalling"} ],
+	"behaviors": [
+		{
+			"name": "AttributeRenderingLibrary.BlockShapeTexturesFromAttributes",
+			"properties": {
+				"shape": { "*": { "base": "smolfurniture:smoltable" } },
+				"textures": {
+					"*": {
+						"top": { "base": "game:block/wood/debarked/{wood}" },
+						"sides": { "base": "game:block/wood/debarked/{wood}" }
+					}
+				},
+				"name": { "*": ["smolfurniture:block-smoltable-*"] }
+			}
+		},
+		{
+			"name": "AttributeRenderingLibrary.GenerateCreativeStacks",
+			"properties": {
+				"variantgroups": [
+					{ "code": "wood", "states": ["aged", "veryaged"], "loadFromProperties": "game:block/wood" }
+				],
+				"creativeinventory": {
+					"smolfurniture": ["*"]
+				}
+			}
+		},
+		{
+			"name": "AttributeRenderingLibrary.Handbook",
+			"properties": {
+				"excludeFromHandbookSearch": { "*": true },
+				"pageCode": { "*": "block-smolfurniture:smoltable" },
+				"codeForGrouping": { "*": "smolfurniture:smoltable" },
+				"wildcardForGrouping": { "*": "smolfurniture:smoltable" }
+			}
+		},
+		{ "name": "UnstableFalling" }
+	],
 
 	"attributes": {
 		"humanoidTraversalCost": 100,
-		"pieSurfaceHeight": 0.65625
+		"pieSurfaceHeight": 0.65625,
+		"handbook": { "groupBy": ["smoltable"] }
 	},
-	"variantgroups": [
-		{ "code": "wood", "states": ["aged", "veryaged"], "loadFromProperties": "block/wood" }
-	],
 	"shape": { "base": "smolfurniture:smoltable" },
 	"heldTpIdleAnimation": "holdunderarm",
-	"creativeinventoryByType": {
-		"*": { "general": ["*"], "decorative": ["*"], "smolfurniture": ["*"] }
-	},
 	"blockmaterial": "Wood",
 	"replaceable": 900,
 	"resistance": 1.5,
@@ -44,11 +74,9 @@
 		"burnTemperature": 600,
 		"burnDuration": 35
 	},
-	"texturesByType": {
-		"smoltable-*": {
-			"top": { "base": "game:block/wood/debarked/{wood}" },
-			"sides": { "base": "game:block/wood/debarked/{wood}" }
-		}
+	"textures": {
+		"top": { "base": "game:block/wood/debarked/aged" },
+		"sides": { "base": "game:block/wood/debarked/aged" }
 	},
 	"materialDensity": 400,
 	"tpHandTransform": {
